@@ -1,31 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('includes/head.ejs') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= pageTitle%>
-    </title>
     <link rel="stylesheet" href="/css/errorPage.css">
-    <link rel="stylesheet" href="/css/nav_styles.css">
-</head>
 
-<body>
-    <nav>
-        <div class="navbar">
-            <ul class="nav_list">
-                <li class="nav_list_item"><a href="/" class="<%= (path === '/') ? 'active' : '' %>">Home</a></li>
-                <li class="nav_list_item"><a href="/addItem" class="<%= (path === '/addItem') ? 'active' : '' %>">Add to the list</a></li>
-            </ul>
+    <body>
+        <%- include('includes/nav.ejs') %>
+
+        <div class="err_container">
+            <img src="https://www.civilsociety.co.uk/static/a4b6a9b1-7107-4615-b6d4ed69177667db/article_img_detail_5ba532e110cf7bcee7b0d6e49c027c8b/Dog-440.jpg"
+                alt="Error">
+            <h2>OOPS! Page Not Found</h2>
         </div>
-    </nav>
+    </body>
 
-    <div class="err_container">
-        <img src="https://www.civilsociety.co.uk/static/a4b6a9b1-7107-4615-b6d4ed69177667db/article_img_detail_5ba532e110cf7bcee7b0d6e49c027c8b/Dog-440.jpg"
-            alt="Error">
-        <h2>OOPS! Page Not Found</h2>
-    </div>
-</body>
-
-</html>
+    </html>
