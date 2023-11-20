@@ -1,35 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('includes/head.ejs') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= pageTitle%>
-    </title>
-    <link rel="stylesheet" href="/css/nav_styles.css">
     <link rel="stylesheet" href="/css/forms.css">
-</head>
 
-<body>
-    <nav>
-        <div class="navbar">
-            <ul class="nav_list">
-                <li class="nav_list_item"><a class="<%= (path === '/') ? 'active' : '' %>" href="/">Home</a></li>
-                <li class="nav_list_item"><a class="<%= (path === '/addItem') ? 'active' : '' %>" href="/addItem">Add to the list</a></li>
-            </ul>
+    <body>
+        <%- include('includes/nav.ejs') %>
+
+        <div class="container">
+            <form class="list_form" action="/addItem" method="POST">
+                <div class="form-control">
+                    <label for="item">Enter list item</label>
+                    <input type="text" name="list_item" id="item">
+                </div>
+
+                <button class="submit_btn" type="submit">Add to list</button>
+            </form>
         </div>
-    </nav>
-    <div class="container">
-        <form class="list_form" action="/addItem" method="POST">
-            <div class="form-control">
-                <label for="item">Enter list item</label>
-                <input type="text" name="list_item" id="item">
-            </div>
+    </body>
 
-            <button class="submit_btn" type="submit">Add to list</button>
-        </form>
-    </div>
-</body>
-
-</html>
+    </html>
