@@ -1,37 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('includes/head.ejs') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= pageTitle%>
-    </title>
-    <link rel="stylesheet" href="/css/nav_styles.css">
-</head>
+    <body>
 
-<body>
-    <nav>
-        <div class="navbar">
-            <ul class="nav_list">
-                <li class="nav_list_item"><a href="/" class="<%= (path === '/') ? 'active' : '' %>">Home</a></li>
-                <li class="nav_list_item"><a href="/addItem" class="<%= (path === '/addItem') ? 'active' : '' %>">Add to the list</a></li>
-            </ul>
-        </div>
-    </nav>
+        <%- include('includes/nav.ejs') %>
 
-    <div class="container">
-        <% if (listOfItems.length > 0) { %>
-            <h1>My To do List</h1>
-            <ul class="list">
-               <% for(let item of listOfItems) { %>
-                 <li class="list_item"><%= item.title %></li>
-                <% } %>
-            </ul>
-        <% } else { %>
-            <h2>No items to display!</h2>
-        <% } %>
-    </div>
-</body>
+            <div class="container">
+                <% if (listOfItems.length> 0) { %>
+                    <h1>My To do List</h1>
+                    <ul class="list">
+                        <% for(let item of listOfItems) { %>
+                            <li class="list_item">
+                                <%= item.title %>
+                            </li>
+                            <% } %>
+                    </ul>
+                    <% } else { %>
+                        <h2>No items to display!</h2>
+                        <% } %>
+            </div>
+    </body>
 
-</html>
+    </html>
